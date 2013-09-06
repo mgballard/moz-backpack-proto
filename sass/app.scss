@@ -1,0 +1,273 @@
+// Global Foundation Settings
+@import "settings";
+
+// Comment out this import if you don't want to use normalize
+@import "normalize";
+
+// Comment out this import if you are customizing you imports below
+@import "foundation";
+
+// Import specific parts of Foundation by commenting the import "foundation"
+// and uncommenting what you want below. You must uncomment the following if customizing
+
+// @import "foundation/components/global"; // *always required
+// @import "foundation/components/grid";
+
+//
+// Use this grid if you want to start using the new Foundation 5 grid early.
+// It will change breakpoints to min-width: 640px and 1024px.
+//
+// @import "foundation/components/grid-5";
+//
+
+// @import "foundation/components/visibility";
+// @import "foundation/components/block-grid";
+// @import "foundation/components/type";
+// @import "foundation/components/buttons";
+// @import "foundation/components/forms"; // *requires components/buttons
+// @import "foundation/components/custom-forms"; // *requires components/buttons, components/forms
+// @import "foundation/components/button-groups"; // *requires components/buttons
+// @import "foundation/components/dropdown-buttons"; // *requires components/buttons
+// @import "foundation/components/split-buttons"; // *requires components/buttons
+// @import "foundation/components/flex-video";
+// @import "foundation/components/section";
+// @import "foundation/components/top-bar";  // *requires components/grid
+// @import "foundation/components/orbit";
+// @import "foundation/components/reveal";
+// @import "foundation/components/joyride";
+// @import "foundation/components/clearing";
+// @import "foundation/components/alert-boxes";
+// @import "foundation/components/breadcrumbs";
+// @import "foundation/components/keystrokes";
+// @import "foundation/components/labels";
+// @import "foundation/components/inline-lists";
+// @import "foundation/components/pagination";
+// @import "foundation/components/panels";
+// @import "foundation/components/pricing-tables";
+// @import "foundation/components/progress-bars";
+// @import "foundation/components/side-nav";
+// @import "foundation/components/sub-nav";
+// @import "foundation/components/switch";
+// @import "foundation/components/magellan";
+// @import "foundation/components/tables";
+// @import "foundation/components/thumbs";
+// @import "foundation/components/tooltips";
+// @import "foundation/components/dropdown";
+
+// begin backpack v1.1//
+@import "compass";
+html,body {
+	background:#e5e5e5;
+}
+//fonts
+.badge-thumbs .content {
+	font-size:0.85em;
+}
+.badge-thumbs .detail {
+	padding:0.625em;
+}
+.badgeui > ul > li > a.badge_action {
+	background-image:url('../img/sprite.png');
+	background-repeat:no-repeat;
+}
+.badgeui {
+	z-index:2;
+}
+.badgeui li {
+	list-style-type:none;
+}
+.badgeui .f-dropdown > li > a.brfc {
+float:left;
+margin-right:1.25em;
+}
+.badgeui .f-dropdown > li > a:hover {
+	text-decoration:underline;
+}
+.badgeui .f-dropdown > li hr {
+	margin:0.625em 0;
+}
+#badge_modal {
+	display:none;
+}
+
+#badge_modal_inner {
+	position:absolute;
+	z-index:3;
+	background-color:#fff;
+	border-radius:2px;
+	-webkit-box-shadow: 0px 0px 14px rgba(50, 50, 50, 0.5);
+	-moz-box-shadow:    0px 0px 14px rgba(50, 50, 50, 0.5);
+	box-shadow:         0px 0px 14px rgba(50, 50, 50, 0.5);
+	padding:1.25em;
+}
+#badge_modal_inner .close {
+	position:absolute;
+	top:0;
+	right:0;
+	padding:1.25em;
+}
+.alert-box {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:10;
+	display:none;
+}
+.top-bar,
+.top-bar-section li a:not(.button) {
+	background:#182d39;
+}
+.top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
+	border-left-color:#182d39;
+	border-right-color:#2e4958;
+}
+#badgefilter > div, 
+#badgefilter > select {
+	
+}
+span.title {
+	font-size:1.1em;
+}
+.badge-thumbs.square {
+	position:relative;
+}
+.badge-thumbs.square > li {
+	position:relative;
+}
+.badge-thumbs.square > li > a {
+	position:relative;
+	display:block;
+	width:100%;
+	height:200px;
+	//@include background-image(linear-gradient(top,  rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%));
+	background-color:#fff;
+	border-radius:2px;
+	overflow:hidden;
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+.badge-thumbs.square > li > a > span.detail {
+	display:block;
+	position:absolute;
+	top:160px;
+	left:0;
+	width:100%;
+	height:100%;
+	background-image:url('../img/gd/90pw.png');
+	background-repeat:repeat;
+}
+.badge-thumbs.square > li > a > span.detail > span {
+	display:block;
+}
+.badge-thumbs.square .badgeui {
+	display:none;
+	position:absolute;
+	//top:200px;
+	bottom:13px;
+	left:0;
+	width:100%;
+	padding:0 0.625em;
+}
+.badge-thumbs.square .badgeui > ul {
+	margin-left:0px;
+	display:inline-block;
+	width:100%;
+	font-size:.75em;
+	background-color:#f4f4f4;
+	border-bottom-left-radius:2px;
+	border-bottom-right-radius:2px;
+	border-top:1px solid #e5e5e5;
+	margin-top:-1px;
+}
+.badge-thumbs.square .badgeui > ul > li {
+	width:33%;
+	margin-left:0px;
+	float:left;
+	postion:relative;
+}
+.badge-thumbs.square .badgeui > ul > li > a {
+	display:block;
+	width:100%;
+	height:40px;
+	text-indent:-9000px;
+}
+
+.badge-thumbs.square .badge_action.bdel {
+	background-position:center -3px;
+}
+.badge-thumbs.square .badge_action.bcol {
+	background-position:center -271px;
+}
+.badge-thumbs.square .badge_action.bdet {
+	background-position:center -204px;
+}
+
+.collections .badge-thumbs {
+	margin-left:0px;
+}
+.badge-thumbs.vertical > li {
+	list-style-type:none;
+	margin-bottom:0.625em;
+	position:relative;
+}
+.badge-thumbs.vertical > li > a {
+	background-position:12px center;
+	background-repeat:no-repeat;
+	background-color:#fff;
+	display:block;
+	min-height:90px;
+}
+.badge-thumbs.vertical > li > a > span {
+	margin-left:65px;
+}
+.badge-thumbs.vertical > li > a span {
+	display:block;
+}
+.badge-thumbs.vertical .badgeui {
+	position:absolute;
+	top:0px;
+	left:0;
+	padding:0 0 0 0.625em;
+	display:none;
+	height:100%;
+	background:#fff;
+}
+.badge-thumbs.vertical .badgeui > ul {
+	margin-left:0px;
+	display:block;
+	font-size:.75em;
+	text-align:center;
+	height:100%;
+}
+.badge-thumbs.vertical .badgeui > ul > li {
+	overflow:hidden;
+	margin-left:0px;
+	height:33%;
+	display:block;
+}
+.badge-thumbs.vertical .badgeui > ul > li > a
+{
+	display:block;
+	width:60px;
+	height:100%;
+	text-indent:-9000px;
+}
+.badge-thumbs.vertical .badge_action.bdel {
+	background-position:center -342px;
+}
+.badge-thumbs.vertical .badge_action.bcol {
+	background-position:center -555px;
+}
+.badge-thumbs.vertical .badge_action.bdet {
+	background-position:center -505px;
+}
+.fullbadge img {
+	float:right;
+}
+
+.fullbadge p {
+	line-height:1.25em;
+}
+
+// end backpack v1.1//
