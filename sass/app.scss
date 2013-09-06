@@ -160,7 +160,7 @@ span.title {
 .badge-thumbs.square > li > a > span.detail > span {
 	display:block;
 }
-.badge-thumbs.square .badgeui {
+.badge-thumbs .badgeui {
 	display:none;
 	position:absolute;
 	//top:200px;
@@ -169,7 +169,7 @@ span.title {
 	width:100%;
 	padding:0 0.625em;
 }
-.badge-thumbs.square .badgeui > ul {
+.badge-thumbs .badgeui > ul {
 	margin-left:0px;
 	display:inline-block;
 	width:100%;
@@ -180,26 +180,25 @@ span.title {
 	border-top:1px solid #e5e5e5;
 	margin-top:-1px;
 }
-.badge-thumbs.square .badgeui > ul > li {
+.badge-thumbs .badgeui > ul > li {
 	width:33%;
 	margin-left:0px;
 	float:left;
-	postion:relative;
 }
-.badge-thumbs.square .badgeui > ul > li > a {
+.badge-thumbs .badgeui > ul > li > a {
 	display:block;
 	width:100%;
 	height:40px;
 	text-indent:-9000px;
 }
 
-.badge-thumbs.square .badge_action.bdel {
+.badge-thumbs .badge_action.bdel {
 	background-position:center -3px;
 }
-.badge-thumbs.square .badge_action.bcol {
+.badge-thumbs .badge_action.bcol {
 	background-position:center -271px;
 }
-.badge-thumbs.square .badge_action.bdet {
+.badge-thumbs .badge_action.bdet {
 	background-position:center -204px;
 }
 
@@ -224,50 +223,25 @@ span.title {
 .badge-thumbs.vertical > li > a span {
 	display:block;
 }
+
 .badge-thumbs.vertical .badgeui {
+	width:inherit;
 	position:absolute;
-	top:0px;
-	left:0;
-	padding:0 0 0 0.625em;
-	display:none;
-	height:100%;
-	background:#fff;
+	left:inherit;
+	bottom:0px;
+	right:0px;
+	width:100%;
+	padding-left:70px;
 }
 .badge-thumbs.vertical .badgeui > ul {
-	margin-left:0px;
-	display:block;
-	font-size:.75em;
-	text-align:center;
-	height:100%;
-}
-.badge-thumbs.vertical .badgeui > ul > li {
-	overflow:hidden;
-	margin-left:0px;
-	height:33%;
-	display:block;
-}
-.badge-thumbs.vertical .badgeui > ul > li > a
-{
-	display:block;
-	width:60px;
-	height:100%;
-	text-indent:-9000px;
-}
-.badge-thumbs.vertical .badge_action.bdel {
-	background-position:center -342px;
-}
-.badge-thumbs.vertical .badge_action.bcol {
-	background-position:center -555px;
-}
-.badge-thumbs.vertical .badge_action.bdet {
-	background-position:center -505px;
+	border-radius:5px;
+	border:1px solid #e5e5e5;
 }
 .fullbadge img {
 	float:right;
 }
-
 .fullbadge p {
 	line-height:1.25em;
 }
 
-// end backpack v1.1//
+// end backpack v2//

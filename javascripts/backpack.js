@@ -26,7 +26,16 @@ $.timeago.settings.allowFuture = true;
   	    }
       //for vertical thumbnail badges (in lists)
       } else if (target.parents('ul').hasClass('vertical')) {
-        target.addClass('chosen').parent().append(makeBadgeUI(hashOrAction)).find('.badgeui').fadeIn('fast');
+        //SOMEB BUG HERE - WHEN YOU TOGGLE VISIBLE A BUNCH OF VERTICALS THEN TOGGLE INVISI ALL DISAPPEAR
+        if (target.hasClass('chosen')) {
+          target.removeClass('chosen').parents('li').find('.badgeui').fadeOut('fast', function() {
+              $(this).remove();
+            });
+        } else {
+          target.addClass('chosen').parent().append(makeBadgeUI(hashOrAction)).find('.badgeui').fadeIn('fast');
+        }
+
+
       }
     return false;
   //Perform action based on clicked Badge UI item

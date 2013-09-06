@@ -7358,7 +7358,7 @@ span.title {
 }
 
 /* line 163, ../sass/app.scss */
-.badge-thumbs.square .badgeui {
+.badge-thumbs .badgeui {
   display: none;
   position: absolute;
   bottom: 13px;
@@ -7368,7 +7368,7 @@ span.title {
 }
 
 /* line 172, ../sass/app.scss */
-.badge-thumbs.square .badgeui > ul {
+.badge-thumbs .badgeui > ul {
   margin-left: 0px;
   display: inline-block;
   width: 100%;
@@ -7381,49 +7381,48 @@ span.title {
 }
 
 /* line 183, ../sass/app.scss */
-.badge-thumbs.square .badgeui > ul > li {
+.badge-thumbs .badgeui > ul > li {
   width: 33%;
   margin-left: 0px;
   float: left;
-  postion: relative;
 }
 
-/* line 189, ../sass/app.scss */
-.badge-thumbs.square .badgeui > ul > li > a {
+/* line 188, ../sass/app.scss */
+.badge-thumbs .badgeui > ul > li > a {
   display: block;
   width: 100%;
   height: 40px;
   text-indent: -9000px;
 }
 
-/* line 196, ../sass/app.scss */
-.badge-thumbs.square .badge_action.bdel {
+/* line 195, ../sass/app.scss */
+.badge-thumbs .badge_action.bdel {
   background-position: center -3px;
 }
 
-/* line 199, ../sass/app.scss */
-.badge-thumbs.square .badge_action.bcol {
+/* line 198, ../sass/app.scss */
+.badge-thumbs .badge_action.bcol {
   background-position: center -271px;
 }
 
-/* line 202, ../sass/app.scss */
-.badge-thumbs.square .badge_action.bdet {
+/* line 201, ../sass/app.scss */
+.badge-thumbs .badge_action.bdet {
   background-position: center -204px;
 }
 
-/* line 206, ../sass/app.scss */
+/* line 205, ../sass/app.scss */
 .collections .badge-thumbs {
   margin-left: 0px;
 }
 
-/* line 209, ../sass/app.scss */
+/* line 208, ../sass/app.scss */
 .badge-thumbs.vertical > li {
   list-style-type: none;
   margin-bottom: 0.625em;
   position: relative;
 }
 
-/* line 214, ../sass/app.scss */
+/* line 213, ../sass/app.scss */
 .badge-thumbs.vertical > li > a {
   background-position: 12px center;
   background-repeat: no-repeat;
@@ -7432,73 +7431,39 @@ span.title {
   min-height: 90px;
 }
 
-/* line 221, ../sass/app.scss */
+/* line 220, ../sass/app.scss */
 .badge-thumbs.vertical > li > a > span {
   margin-left: 65px;
 }
 
-/* line 224, ../sass/app.scss */
+/* line 223, ../sass/app.scss */
 .badge-thumbs.vertical > li > a span {
   display: block;
 }
 
 /* line 227, ../sass/app.scss */
 .badge-thumbs.vertical .badgeui {
+  width: inherit;
   position: absolute;
-  top: 0px;
-  left: 0;
-  padding: 0 0 0 0.625em;
-  display: none;
-  height: 100%;
-  background: #fff;
+  left: inherit;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  padding-left: 70px;
 }
 
 /* line 236, ../sass/app.scss */
 .badge-thumbs.vertical .badgeui > ul {
-  margin-left: 0px;
-  display: block;
-  font-size: .75em;
-  text-align: center;
-  height: 100%;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
 }
 
-/* line 243, ../sass/app.scss */
-.badge-thumbs.vertical .badgeui > ul > li {
-  overflow: hidden;
-  margin-left: 0px;
-  height: 33%;
-  display: block;
-}
-
-/* line 250, ../sass/app.scss */
-.badge-thumbs.vertical .badgeui > ul > li > a {
-  display: block;
-  width: 60px;
-  height: 100%;
-  text-indent: -9000px;
-}
-
-/* line 256, ../sass/app.scss */
-.badge-thumbs.vertical .badge_action.bdel {
-  background-position: center -342px;
-}
-
-/* line 259, ../sass/app.scss */
-.badge-thumbs.vertical .badge_action.bcol {
-  background-position: center -555px;
-}
-
-/* line 262, ../sass/app.scss */
-.badge-thumbs.vertical .badge_action.bdet {
-  background-position: center -505px;
-}
-
-/* line 265, ../sass/app.scss */
+/* line 240, ../sass/app.scss */
 .fullbadge img {
   float: right;
 }
 
-/* line 269, ../sass/app.scss */
+/* line 243, ../sass/app.scss */
 .fullbadge p {
   line-height: 1.25em;
 }
