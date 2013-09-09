@@ -172,11 +172,12 @@ $.timeago.settings.allowFuture = true;
     var height = firstli_h;
     var width = firstli_w;
 
-    if(numRows == 4) {
+    if(numRows != 3) {
       width = ((firstli_w * 2) + 20);
       height = ((firstli_h * 2) + 20);
       //display on the right if element is on the left
-      if(elemPosition < (bodyWidth / 2)) xpos = (xpos + width + 20);
+      if(numRows == 1) { height*=2; width=firstli_w; }
+      if(elemPosition < (bodyWidth / 2) && (numRows == 4)) xpos = (xpos + width + 20);
     } else if(numRows == 3){
       width = ((firstli_w * 1.5) + 20);
       height = ((firstli_h * 4) + 30);
