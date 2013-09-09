@@ -45,6 +45,8 @@ $.timeago.settings.allowFuture = true;
 	} else if (target.hasClass('badge_action')) {
 		badgeAction(target);
 		if(!target.hasClass('bcol')) return false;
+  } else if (target.hasClass('collection_action')) {
+    collectionAction(target);
   } else if (target.hasClass('toggle')) {
     //console.log(hashOrAction);
     $('#'+hashOrAction).fadeToggle();
@@ -107,6 +109,24 @@ $.timeago.settings.allowFuture = true;
     }
   }
 
+  //a function to process collectionUI clicks (details,delete,etc.)
+  function collectionAction(element) {
+
+  var action = element.attr('class').split(' ')[1];
+  var hash = element.attr('class').split(' ')[2];
+
+  console.log('action is : ' + action);
+  console.log('target is : ' + hash);
+
+  if (action == 'cdel') {
+    console.log(hash);
+    makeAlert('Are you sure you want to delete ' + $('.' + hash + ' .title').html() + '?','alert');
+    } else if (action == 'cdet') {
+      makeModal(element);
+    } else {
+      console.log('no idea...')
+    }
+  }
   //a function to create an alert box element and add to the DOM
   function makeAlert(text,status) {
     if($('.alert-box').length != 0) {

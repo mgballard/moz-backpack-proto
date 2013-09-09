@@ -284,5 +284,21 @@ span.title {
 .fullbadge p {
 	line-height:1.25em;
 }
+.collections .collection_action {
+	height:40px;
+	background-image:url("../img/sprite.png");
+	display:block;
+	float:left;
+	background-repeat:no-repeat;
+	text-indent:-9000px;
+	width:30px;
+}
+.collections .collection_action.cdel {
+	background-position:-1px 0px;
+}
+.collections .collection_action.csha {
+	background-position:0px -134px;
+}
+
 
 // end backpack v2//
