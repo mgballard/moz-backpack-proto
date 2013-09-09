@@ -4,19 +4,22 @@ var docroot = '/moz/backpack';
 
 $.timeago.settings.allowFuture = true;
   //the click function for lists of badge thumbnails
-  $( ".badge-thumbs" ).delegate( "a", "click", function() {
+  $( '.grid' ).delegate( "a", "click", function() {
   	var target = $( this );
   	var hashOrAction = $( this ).attr('class').split(' ')[1];
+    var ui = 0;
+    if (target.hasClass('badgethumb')) { ui = 'badge'; } 
+    else if (target.hasClass('collectionthumb')) { ui = 'collection'; }
 
   	//Display badge content and BadgeUI for clicked badge
-   	if (target.hasClass('badgethumb')) {
+   	if (ui != 0) {
       //for square thumbnal badges
       if(target.parents('ul').hasClass('square')){
   	    if (target.hasClass('chosen')) {
           $(target).find('.detail').animate({
             top: "160px"
           }, 400, "swing", function(){
-            target.removeClass('chosen').parents('li').find('.badgeui').fadeOut('fast', function() {
+            target.removeClass('chosen').parents('li').find('.ui').fadeOut('fast', function() {
               $(this).remove();
             });
           });
@@ -24,18 +27,20 @@ $.timeago.settings.allowFuture = true;
           $(target).find('.detail').animate({
             top: "0px"
           }, 400, "swing", function(){
-            target.addClass('chosen').parents('li').append(makeBadgeUI(hashOrAction)).find('.badgeui').fadeIn('fast');
+            ui = makeUI(hashOrAction,ui)
+            target.addClass('chosen').parents('li').append(ui).find('.ui').fadeIn('fast');
           });
   	    }
       //for vertical thumbnail badges (in lists)
       } else if (target.parents('ul').hasClass('vertical')) {
         //SOMEB BUG HERE - WHEN YOU TOGGLE VISIBLE A BUNCH OF VERTICALS THEN TOGGLE INVISI ALL DISAPPEAR
         if (target.hasClass('chosen')) {
-          target.removeClass('chosen').parents('li').find('.badgeui').fadeOut('fast', function() {
+          target.removeClass('chosen').parents('li').find('.ui').fadeOut('fast', function() {
               $(this).remove();
             });
         } else {
-          target.addClass('chosen').parent().append(makeBadgeUI(hashOrAction)).find('.badgeui').fadeIn('fast');
+          ui = makeUI(hashOrAction,ui)
+          target.addClass('chosen').parent().append(ui).find('.ui').fadeIn('fast');
         }
 
 
@@ -57,27 +62,38 @@ $.timeago.settings.allowFuture = true;
   });
 
   //a function to generate the dropdown BadgeUI from the clicked badge hash
-  function makeBadgeUI(hash) {
-  	console.log('making a badge ui for : ' + hash);
+  function makeUI(hash,what) {
+  	console.log('making a ' + what + ' ui for : ' + hash);
   	var output = '' +
-  	'<div class="badgeui">' +
-  	'	<ul>' +
-  	'		<li><a class="badge_action bdel ' + hash + '" href="#">Delete</a></li>' +
-  	'		<li><a class="badge_action bcol ' + hash + '" data-dropdown="' + hash + '_coll_dd" href="#">Collections</a>' +
-  	'      <ul id="' + hash + '_coll_dd" class="f-dropdown" data-dropdown-content>' +
-              getCollectionsByBadge(hash,'li') +
-    '         <li class="divider"><hr></li>' +
-    '         <li><a class="toggle ' + hash + '_batc_dd" href="#"><span class="title">Add to new or existing collection</span></a>' +
-    '            <ul style="display:none;" class="submenu" id="' + hash + '_batc_dd">' +
-    '               <li><input type="text" placeholder="Enter a title..." name="newcollection"></li>' +
-                    getCollections(hash,'li') +
-    '            </ul>' +
-    '         </li>' +
-    '      </ul>' +
-    '   </li>' +
-    '		<li><a class="badge_action bdet ' + hash + '" href="#">Detail</a></li>' +
-  	'	</ul>' +
-  	'</div>';
+  	'<div class="' + what + 'ui ui">' +
+  	'	<ul>';
+
+      if(what == 'badge') {
+        output += '' +
+      	'		<li><a class="badge_action bdel ' + hash + '" href="#">Delete</a></li>' +
+      	'		<li><a class="badge_action bcol ' + hash + '" data-dropdown="' + hash + '_coll_dd" href="#">Collections</a>' +
+      	'      <ul id="' + hash + '_coll_dd" class="f-dropdown" data-dropdown-content>' +
+                  getCollectionsByBadge(hash,'li') +
+        '         <li class="divider"><hr></li>' +
+        '         <li><a class="toggle ' + hash + '_batc_dd" href="#"><span class="title">Add to new or existing collection</span></a>' +
+        '            <ul style="display:none;" class="submenu" id="' + hash + '_batc_dd">' +
+        '               <li><input type="text" placeholder="Enter a title..." name="newcollection"></li>' +
+                        getCollections(hash,'li') +
+        '            </ul>' +
+        '         </li>' +
+        '      </ul>' +
+        '   </li>' +
+        '		<li><a class="badge_action bdet ' + hash + '" href="#">Detail</a></li>';
+      } else {
+      output += '' +
+        '   <li><a class="collection_action cdel ' + hash + '" href="#">Delete</a></li>' +
+        '   <li><a class="collection_action csha ' + hash + '" href="#">Share</a></li>' +
+        '   <li><a class="collection_action cdet ' + hash + '" href="#">Detail</a></li>';    
+      }
+
+  output += '' +
+    '	</ul>' +
+    '</div>';
 
   	return output;
 

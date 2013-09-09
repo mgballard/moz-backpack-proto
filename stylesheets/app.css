@@ -7234,50 +7234,50 @@ html, body {
 }
 
 /* line 68, ../sass/app.scss */
-.badgeui > ul > li > a.badge_action {
+.ui > ul > li > a.badge_action {
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
 }
 
 /* line 72, ../sass/app.scss */
-.badgeui {
+.ui {
   z-index: 2;
 }
 
 /* line 75, ../sass/app.scss */
-.badgeui li {
+.ui li {
   list-style-type: none;
 }
 
 /* line 78, ../sass/app.scss */
-.badgeui .f-dropdown > li > a.brfc {
+.ui .f-dropdown > li > a.brfc {
   float: left;
   margin-right: 1.25em;
 }
 
 /* line 82, ../sass/app.scss */
-.badgeui .f-dropdown > li > a:hover {
+.ui .f-dropdown > li > a:hover {
   text-decoration: underline;
 }
 
 /* line 85, ../sass/app.scss */
-.badgeui .f-dropdown > li hr {
+.ui .f-dropdown > li hr {
   margin: 0.625em 0;
 }
 
 /* line 88, ../sass/app.scss */
-.badgeui .submenu li:hover a {
+.ui .submenu li:hover a {
   background-color: #fff;
 }
 
 /* line 91, ../sass/app.scss */
-.badgeui .f-dropdown {
+.ui .f-dropdown {
   padding-top: 0.625em;
   padding-bottom: 0.625em;
 }
 
 /* line 95, ../sass/app.scss */
-.badgeui input {
+.ui input {
   max-width: 175px;
 }
 
@@ -7367,7 +7367,7 @@ span.title {
 }
 
 /* line 166, ../sass/app.scss */
-.badge-thumbs.square.grid > li > a {
+.square.grid > li > a {
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -7420,7 +7420,7 @@ span.title {
 }
 
 /* line 205, ../sass/app.scss */
-.badge-thumbs .badgeui {
+.square.grid .ui {
   display: none;
   position: absolute;
   bottom: 13px;
@@ -7430,7 +7430,7 @@ span.title {
 }
 
 /* line 213, ../sass/app.scss */
-.badge-thumbs .badgeui > ul {
+.square.grid .ui > ul {
   margin-left: 0px;
   display: inline-block;
   width: 100%;
@@ -7443,48 +7443,59 @@ span.title {
 }
 
 /* line 224, ../sass/app.scss */
-.badge-thumbs .badgeui > ul > li {
-  width: 33%;
+.square.grid .ui > ul > li {
   margin-left: 0px;
   float: left;
 }
 
-/* line 229, ../sass/app.scss */
-.badge-thumbs .badgeui > ul > li > a {
+/* line 228, ../sass/app.scss */
+.square.grid .ui > ul > li > a {
   display: block;
   width: 100%;
   height: 40px;
   text-indent: -9000px;
 }
 
-/* line 236, ../sass/app.scss */
-.badge-thumbs .badge_action.bdel {
+/* line 234, ../sass/app.scss */
+.square.grid .ui > ul > li {
+  width: 33%;
+}
+
+/* line 238, ../sass/app.scss */
+.badge-thumbs .badge_action.bdel,
+.collection-thumbs .collection_action.cdel {
   background-position: center -3px;
 }
 
-/* line 239, ../sass/app.scss */
+/* line 241, ../sass/app.scss */
 .badge-thumbs .badge_action.bcol {
   background-position: center -271px;
 }
 
-/* line 242, ../sass/app.scss */
-.badge-thumbs .badge_action.bdet {
+/* line 245, ../sass/app.scss */
+.badge-thumbs .badge_action.bdet,
+.collection-thumbs .collection_action.cdet {
   background-position: center -204px;
 }
 
-/* line 246, ../sass/app.scss */
+/* line 248, ../sass/app.scss */
+.collection-thumbs .collection_action.csha {
+  background-position: center -137px;
+}
+
+/* line 251, ../sass/app.scss */
 .collections .badge-thumbs {
   margin-left: 0px;
 }
 
-/* line 249, ../sass/app.scss */
+/* line 254, ../sass/app.scss */
 .badge-thumbs.vertical > li {
   list-style-type: none;
   margin-bottom: 0.625em;
   position: relative;
 }
 
-/* line 254, ../sass/app.scss */
+/* line 259, ../sass/app.scss */
 .badge-thumbs.vertical > li > a {
   background-position: 12px center;
   background-repeat: no-repeat;
@@ -7493,18 +7504,18 @@ span.title {
   min-height: 90px;
 }
 
-/* line 261, ../sass/app.scss */
+/* line 266, ../sass/app.scss */
 .badge-thumbs.vertical > li > a > span {
   margin-left: 65px;
 }
 
-/* line 264, ../sass/app.scss */
+/* line 269, ../sass/app.scss */
 .badge-thumbs.vertical > li > a span {
   display: block;
 }
 
-/* line 268, ../sass/app.scss */
-.badge-thumbs.vertical .badgeui {
+/* line 273, ../sass/app.scss */
+.badge-thumbs.vertical .ui {
   width: inherit;
   position: absolute;
   left: inherit;
@@ -7514,39 +7525,43 @@ span.title {
   padding-left: 70px;
 }
 
-/* line 277, ../sass/app.scss */
-.badge-thumbs.vertical .badgeui > ul {
+/* line 282, ../sass/app.scss */
+.badge-thumbs.vertical .ui > ul {
   border-radius: 5px;
   border: 1px solid #e5e5e5;
 }
 
-/* line 281, ../sass/app.scss */
+/* line 286, ../sass/app.scss */
 .fullbadge img {
   float: right;
 }
 
-/* line 284, ../sass/app.scss */
+/* line 289, ../sass/app.scss */
 .fullbadge p {
   line-height: 1.25em;
 }
 
-/* line 287, ../sass/app.scss */
+/* line 292, ../sass/app.scss */
+.collection_action {
+  background-repeat: no-repeat;
+  background-image: url("../img/sprite.png");
+}
+
+/* line 296, ../sass/app.scss */
 .collections .collection_action {
   height: 40px;
-  background-image: url("../img/sprite.png");
   display: block;
   float: left;
-  background-repeat: no-repeat;
   text-indent: -9000px;
   width: 30px;
 }
 
-/* line 296, ../sass/app.scss */
+/* line 303, ../sass/app.scss */
 .collections .collection_action.cdel {
   background-position: -1px 0px;
 }
 
-/* line 299, ../sass/app.scss */
+/* line 306, ../sass/app.scss */
 .collections .collection_action.csha {
   background-position: 0px -134px;
 }
