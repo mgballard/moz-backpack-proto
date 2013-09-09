@@ -189,7 +189,7 @@ $.timeago.settings.allowFuture = true;
   
     var details = retrieveBadge(element.attr('class').split(' ')[2]);
     var close = $('<a href="#" class="close">×</a>').click(function(){$('#badge_modal').remove();return false});
-    var inner = $('<div style="top:' + ypos + 'px;left:' + xpos + 'px;width:' + width + 'px;height:' + height + 'px;" id="badge_modal_inner"></div>');
+    var inner = $('<div style="top:' + ypos + 'px;left:' + xpos + 'px;width:' + width + 'px;min-height:' + height + 'px;" id="badge_modal_inner"></div>');
     var outer = $('<div id="badge_modal"></div>');
 
     outer.append(inner.append(details,close));
