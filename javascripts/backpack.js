@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+var docroot = '/moz/backpack';
+
 $.timeago.settings.allowFuture = true;
   //the click function for lists of badge thumbnails
   $( ".badge-thumbs" ).delegate( "a", "click", function() {
@@ -195,7 +197,7 @@ function retrieveBadge(hash) {
 
   var output = '<div class="fullbadge">' +
   '<h3>' + badge.name + '</h3>' +
-  '<img src="./img/badge/' + hash + '-l.png">' +
+  '<img src="' + docroot + '/img/badge/' + hash + '-l.png">' +
   '<p>Issued by : <br><strong><a class="redirect ' + collection_hash1 + '" href="./badge/by-organization/organizationhash-x.html">' + badge.org + '</a></strong><br>' + badge.url_org + '</p>' +
   '<p>Issued ' + $.timeago(dateFromUnix(badge.issue)) + '.</p>' +
   '<p>Expires ' + $.timeago(dateFromUnix(badge.expire)) + '.</p>' +
