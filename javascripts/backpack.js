@@ -1,4 +1,5 @@
-$(document).ready(function() {	
+$(document).ready(function() {
+
 $.timeago.settings.allowFuture = true;
   //the click function for lists of badge thumbnails
   $( ".badge-thumbs" ).delegate( "a", "click", function() {
@@ -42,6 +43,10 @@ $.timeago.settings.allowFuture = true;
 	} else if (target.hasClass('badge_action')) {
 		badgeAction(target);
 		if(!target.hasClass('bcol')) return false;
+  } else if (target.hasClass('toggle')) {
+    //console.log(hashOrAction);
+    $('#'+hashOrAction).fadeToggle();
+    return false;
 	} else {
 		console.log('some other link');
 	}
@@ -56,10 +61,14 @@ $.timeago.settings.allowFuture = true;
   	'		<li><a class="badge_action bdel ' + hash + '" href="#">Delete</a></li>' +
   	'		<li><a class="badge_action bcol ' + hash + '" data-dropdown="' + hash + '_coll_dd" href="#">Collections</a>' +
   	'      <ul id="' + hash + '_coll_dd" class="f-dropdown" data-dropdown-content>' +
-    '         <li><a class="badge_action batc ' + hash + '" href="#">Add to new or existing collection</a></li>' +
-
-    getCollectionsByBadge(hash,'li') +
-
+              getCollectionsByBadge(hash,'li') +
+    '         <li class="divider"><hr></li>' +
+    '         <li><a class="toggle ' + hash + '_batc_dd" href="#"><span class="title">Add to new or existing collection</span></a>' +
+    '            <ul style="display:none;" class="submenu" id="' + hash + '_batc_dd">' +
+    '               <li><input type="text" placeholder="Enter a title..." name="newcollection"></li>' +
+                    getCollections(hash,'li') +
+    '            </ul>' +
+    '         </li>' +
     '      </ul>' +
     '   </li>' +
     '		<li><a class="badge_action bdet ' + hash + '" href="#">Detail</a></li>' +
@@ -86,8 +95,11 @@ $.timeago.settings.allowFuture = true;
     } else if (action == 'bcol') {
       console.log(element);
     } else if (action == 'brfc') {
-    var collection = element.attr('class').split(' ')[3];
-    makeAlert('Are you sure you want to delete ' + $('.' + hash + ' .title').html() + ' from ' + $('.redirect.' + collection).html() + '?','alert');
+      var collection = element.attr('class').split(' ')[3];
+      makeAlert('Are you sure you want to delete ' + $('.' + hash + ' .title').html() + ' from ' + $('.' + collection + ' .title').html() + '?','alert');
+    } else if (action == 'batc') {
+      var collection = element.attr('class').split(' ')[3];
+      makeAlert('Are you sure you want to add ' + $('.' + hash + ' .title').html() + ' to ' + $('.' + collection + ' .title').html() + '?','warning');
     } else {
       console.log('no idea...')
     }
@@ -109,30 +121,31 @@ $.timeago.settings.allowFuture = true;
     elemPosition = element.parent().offset().left;
     bodyWidth = $('body').offset().width;
 
-    console.log('element position is : ' + elemPosition);
-    console.log('body width is : ' + bodyWidth);
+   // console.log('element position is : ' + elemPosition);
+   // console.log('body width is : ' + bodyWidth);
 
-    var parentUL = element.parents('.badge-thumbs');
+    var parentUL = element.parents('.grid');
     var firstli = parentUL.find('li:first-child').find('a').offset();
     var xpos = firstli.left;
     var ypos = firstli.top;
-    var firstli_width = firstli.width;
-    var width = firstli_width;
-    var height = 420;
+    var firstli_w = firstli.width;
+    var firstli_h = firstli.height;
+    var numRows = calculateLIsInRow(parentUL.children('li'));
+    var height = firstli_h;
+    var width = firstli_w;
 
-    if (parentUL.hasClass('square')) {
-      width = ((firstli_width * 2) + 20);
-      //if there are 4 list items, display modal on the right if item clicked is to the left
-      if(calculateLIsInRow(parentUL.children('li')) == 4) {
-        if(elemPosition < (bodyWidth / 2)) {
-          console.log('this element is on the left');
-          xpos = (xpos + width + 20);
-        } else {
-          console.log('this element is on the right');  
-        }
-      }   
+    if(numRows == 4) {
+      width = ((firstli_w * 2) + 20);
+      height = ((firstli_h * 2) + 20);
+      //display on the right if element is on the left
+      if(elemPosition < (bodyWidth / 2)) xpos = (xpos + width + 20);
+    } else if(numRows == 3){
+      width = ((firstli_w * 1.5) + 20);
+      height = ((firstli_h * 4) + 30);
+       //display on the right if element is on the left
+      if(elemPosition < (bodyWidth / 2)) xpos = (xpos + firstli_w + 20);
     } else {
-       height = 296;
+      console.log("no idea how to display modal");
     }
   
     var details = retrieveBadge(element.attr('class').split(' ')[2]);
@@ -140,7 +153,7 @@ $.timeago.settings.allowFuture = true;
     var inner = $('<div style="top:' + ypos + 'px;left:' + xpos + 'px;width:' + width + 'px;height:' + height + 'px;" id="badge_modal_inner"></div>');
     var outer = $('<div id="badge_modal"></div>');
 
-    console.log(outer.append(inner.append(details,close)));
+    outer.append(inner.append(details,close));
     
     if($('#badge_modal').length != 0) {
       $('#badge_modal').remove();
@@ -160,7 +173,7 @@ $.timeago.settings.allowFuture = true;
             lisInRow++;   
         }
     });
-    console.log('No: of lis in a row = ' + lisInRow);
+    console.log('number of lis in row : ' + lisInRow);
     return lisInRow;
   }
 
@@ -202,15 +215,29 @@ function dateFromUnix(timestamp) {
 function getCollectionsByBadge(hash,style) {
   //fetch collection hash and names
   collection_hash1="collectionhash-a";
-  collection_hash2="collectionhash-a";
-  collection_hash3="collectionhash-a";
+  collection_hash2="collectionhash-b";
+  collection_hash3="collectionhash-c";
 
   var output = '' +
-  '<li class="divider"><hr></li>' +
-  '<li><a class="badge_action brfc ' + hash + ' ' + collection_hash1 + '" href="#">x</a><a class="redirect ' + collection_hash1 + '" href="./badge/by-collection/collectionhash-x.html">Collection A</a></li>' +
-  '<li><a class="badge_action brfc ' + hash + ' ' + collection_hash2 + '" href="#">x</a><a class="redirect ' + collection_hash2 + '" href="./badge/by-collection/collectionhash-x.html">Collection B</a></li>' +
-  '<li><a class="badge_action brfc ' + hash + ' ' + collection_hash3 + '" href="#">x</a><a class="redirect ' + collection_hash3 + '" href="./badge/by-collection/collectionhash-x.html">Collection C</a></li>';
+  '<li><a class="badge_action brfc ' + hash + ' ' + collection_hash1 + '" href="#">x</a><a class="redirect ' + collection_hash1 + '" href="./badge/by-collection/collectionhash-x.html"><span class="title">Collection A</span></a></li>' +
+  '<li><a class="badge_action brfc ' + hash + ' ' + collection_hash2 + '" href="#">x</a><a class="redirect ' + collection_hash2 + '" href="./badge/by-collection/collectionhash-x.html"><span class="title">Collection B</span></a></li>' +
+  '<li><a class="badge_action brfc ' + hash + ' ' + collection_hash3 + '" href="#">x</a><a class="redirect ' + collection_hash3 + '" href="./badge/by-collection/collectionhash-x.html"><span class="title">Collection C</span></a></li>';
+  
   return output;
+}
+//a function to retrieve all a users collections
+function getCollections(hash,style) {
+  //fetch collection hash and names
+  collection_hash1="collectionhash-d";
+  collection_hash2="collectionhash-e";
+  collection_hash3="collectionhash-f"; 
+
+  var output = '' +
+  '<li><a class="badge_action batc ' + hash + ' ' + collection_hash1 + '" href="#">Add to <span class="title">Collection D</title></a></li>' +
+  '<li><a class="badge_action batc ' + hash + ' ' + collection_hash2 + '" href="#">Add to <span class="title">Collection E</title></a></li>' +
+  '<li><a class="badge_action batc ' + hash + ' ' + collection_hash3 + '" href="#">Add to <span class="title">Collection F</title></a></li>';
+
+  return output;  
 }
 
 
