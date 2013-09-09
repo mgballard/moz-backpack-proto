@@ -198,7 +198,7 @@ function retrieveBadge(hash) {
   var output = '<div class="fullbadge">' +
   '<h3>' + badge.name + '</h3>' +
   '<img src="' + docroot + '/img/badge/' + hash + '-l.png">' +
-  '<p>Issued by : <br><strong><a class="redirect ' + collection_hash1 + '" href="./badge/by-organization/organizationhash-x.html">' + badge.org + '</a></strong><br>' + badge.url_org + '</p>' +
+  '<p>Issued by : <br><strong><a class="redirect ' + collection_hash1 + '" href="' + docroot + '/badge/by-organization/organizationhash-x.html">' + badge.org + '</a></strong><br>' + badge.url_org + '</p>' +
   '<p>Issued ' + $.timeago(dateFromUnix(badge.issue)) + '.</p>' +
   '<p>Expires ' + $.timeago(dateFromUnix(badge.expire)) + '.</p>' +
   '<p>Description : <br>' + badge.desc + '</p>' +
