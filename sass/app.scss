@@ -54,7 +54,9 @@
 // @import "foundation/components/tooltips";
 // @import "foundation/components/dropdown";
 
-// begin backpack v1.1//
+////////////////////////
+// beg backpack proto //
+////////////////////////
 @import "compass";
 html,body {
 	background:#e5e5e5;
@@ -313,5 +315,29 @@ span.title {
 .collections .collection_action.csha {
 	background-position:0px -134px;
 }
+////////////////////////
+// end backpack proto //
+////////////////////////
 
-// end backpack v2//
+////////////////////////
+// beg issuer proto ////
+////////////////////////
+.issuer .badge-thumbs.vertical > li {
+	margin-bottom:0.625em;
+	padding-bottom:0px;
+}
+.issuer .badge-thumbs.vertical > li > a {
+	float:left;
+	width:90%;
+}
+.issuer .badge-thumbs.vertical > li > span {
+	float:right;
+	display:block;
+	width:10%;
+	background-color:#fff;
+	min-height:90px;
+}
+
+////////////////////////
+// end issuer proto ////
+////////////////////////
