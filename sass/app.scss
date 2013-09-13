@@ -158,8 +158,10 @@ span.title {
 	border-radius:2px;
 	overflow:hidden;
 }
-.square.grid > li > a > span.detail {
+.square.grid > li > .badgethumb > span.detail {
 	display:block;
+}
+.square.grid > li > a > span.detail {
 	position:absolute;
 	top:160px;
 	left:0;
@@ -204,7 +206,7 @@ span.title {
 	top:50px;
 	left:25px;
 }
-.square.grid > li > a > span.detail > span {
+.square.grid > li > .badgethumb > span.detail > span {
 	display:block;
 }
 .square.grid .ui {
@@ -317,6 +319,10 @@ span.title {
 .collections .collection_action.csha {
 	background-position:0px -134px;
 }
+// public share page ///
+.logged-out.public .square.grid > li > p.badgethumb {
+	background-color:#fff;	
+}
 ////////////////////////
 // end backpack proto //
 ////////////////////////
@@ -339,7 +345,6 @@ span.title {
 	background-color:#fff;
 	min-height:90px;
 }
-
 ////////////////////////
 // end issuer proto ////
 ////////////////////////
