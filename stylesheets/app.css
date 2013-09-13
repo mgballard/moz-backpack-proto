@@ -7407,14 +7407,15 @@ span.title {
 .badge-thumbs.vertical > li > .badgethumb > span {
   margin-left: 75px;
   padding-top: 0.625em;
+  padding-bottom: 0.625em;
 }
 
-/* line 275, ../sass/app.scss */
+/* line 276, ../sass/app.scss */
 .badge-thumbs.vertical > li > .badgethumb span {
   display: block;
 }
 
-/* line 279, ../sass/app.scss */
+/* line 280, ../sass/app.scss */
 .badge-thumbs.vertical .ui {
   width: inherit;
   position: absolute;
@@ -7426,34 +7427,34 @@ span.title {
   padding-right: 0.625em;
 }
 
-/* line 289, ../sass/app.scss */
+/* line 290, ../sass/app.scss */
 .badge-thumbs.vertical .ui > ul {
   border-radius: 5px;
   border: 1px solid #e5e5e5;
 }
 
-/* line 293, ../sass/app.scss */
+/* line 294, ../sass/app.scss */
 .badge-thumbs.vertical > li > .badgethumb > .detail > .title {
   line-height: 2;
 }
 
-/* line 296, ../sass/app.scss */
+/* line 297, ../sass/app.scss */
 .fullbadge img {
   float: right;
 }
 
-/* line 299, ../sass/app.scss */
+/* line 300, ../sass/app.scss */
 .fullbadge p {
   line-height: 1.25em;
 }
 
-/* line 302, ../sass/app.scss */
+/* line 303, ../sass/app.scss */
 .collection_action {
   background-repeat: no-repeat;
   background-image: url("../img/sprite.png");
 }
 
-/* line 306, ../sass/app.scss */
+/* line 307, ../sass/app.scss */
 .collections .collection_action {
   height: 40px;
   display: block;
@@ -7462,29 +7463,29 @@ span.title {
   width: 30px;
 }
 
-/* line 313, ../sass/app.scss */
+/* line 314, ../sass/app.scss */
 .collections .collection_action.cdel {
   background-position: -1px 0px;
 }
 
-/* line 316, ../sass/app.scss */
+/* line 317, ../sass/app.scss */
 .collections .collection_action.csha {
   background-position: 0px -134px;
 }
 
-/* line 326, ../sass/app.scss */
+/* line 327, ../sass/app.scss */
 .issuer .badge-thumbs.vertical > li {
   margin-bottom: 0.625em;
   padding-bottom: 0px;
 }
 
-/* line 330, ../sass/app.scss */
+/* line 331, ../sass/app.scss */
 .issuer.confirm .badge-thumbs.vertical > li > .badgethumb {
   float: left;
   width: 90%;
 }
 
-/* line 334, ../sass/app.scss */
+/* line 335, ../sass/app.scss */
 .issuer.confirm .badge-thumbs.vertical > li > span {
   float: right;
   display: block;
