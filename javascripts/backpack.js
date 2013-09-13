@@ -1,16 +1,13 @@
-var fragment;
+var hashParams = {};
+var docroot = '/moz/backpack';
+getHashParams()
 
-if(window.location.hash) {
-  fragment = window.location.hash;
-} else {
-  fragment = 0;
-}
-
-console.log(fragment);
 
 $(document).ready(function() {
 
-var docroot = '/moz/backpack';
+  if (hashParams.hasOwnProperty('newbadges')) { 
+    makeAlert("You've added " + hashParams.newbadges + " badges to your Backpack!",'success');
+  }
 
 $.timeago.settings.allowFuture = true;
   //the click function for lists of badge thumbnails
@@ -292,5 +289,18 @@ function getCollections(hash,style) {
   return output;  
 }
 
-
 });
+
+function getHashParams() {
+
+    var e,
+        a = /\+/g,  // Regex for replacing addition symbol with a space
+        r = /([^&;=]+)=?([^&;]*)/g,
+        d = function (s) { return decodeURIComponent(s.replace(a, " ")); },
+        q = window.location.hash.substring(1);
+
+    while (e = r.exec(q))
+       hashParams[d(e[1])] = d(e[2]);
+
+    return hashParams;
+}
