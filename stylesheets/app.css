@@ -7224,69 +7224,74 @@ html, body {
 }
 
 /* line 64, ../sass/app.scss */
+#settings > li {
+  width: 100%;
+}
+
+/* line 67, ../sass/app.scss */
 .square.grid .content {
   font-size: 0.85em;
 }
 
-/* line 67, ../sass/app.scss */
+/* line 70, ../sass/app.scss */
 .square.grid .detail {
   padding: 0.625em;
 }
 
-/* line 70, ../sass/app.scss */
+/* line 73, ../sass/app.scss */
 .ui > ul > li > a.badge_action {
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
 }
 
-/* line 74, ../sass/app.scss */
+/* line 77, ../sass/app.scss */
 .ui {
   z-index: 2;
 }
 
-/* line 77, ../sass/app.scss */
+/* line 80, ../sass/app.scss */
 .ui li {
   list-style-type: none;
 }
 
-/* line 80, ../sass/app.scss */
+/* line 83, ../sass/app.scss */
 .ui .f-dropdown > li > a.brfc {
   float: left;
   margin-right: 1.25em;
 }
 
-/* line 84, ../sass/app.scss */
+/* line 87, ../sass/app.scss */
 .ui .f-dropdown > li > a:hover {
   text-decoration: underline;
 }
 
-/* line 87, ../sass/app.scss */
+/* line 90, ../sass/app.scss */
 .ui .f-dropdown > li hr {
   margin: 0.625em 0;
 }
 
-/* line 90, ../sass/app.scss */
+/* line 93, ../sass/app.scss */
 .ui .submenu li:hover a {
   background-color: #fff;
 }
 
-/* line 93, ../sass/app.scss */
+/* line 96, ../sass/app.scss */
 .ui .f-dropdown {
   padding-top: 0.625em;
   padding-bottom: 0.625em;
 }
 
-/* line 97, ../sass/app.scss */
+/* line 100, ../sass/app.scss */
 .ui input {
   max-width: 175px;
 }
 
-/* line 100, ../sass/app.scss */
+/* line 103, ../sass/app.scss */
 #badge_modal {
   display: none;
 }
 
-/* line 104, ../sass/app.scss */
+/* line 107, ../sass/app.scss */
 #badge_modal_inner {
   position: absolute;
   z-index: 3;
@@ -7298,7 +7303,7 @@ html, body {
   padding: 1.25em;
 }
 
-/* line 114, ../sass/app.scss */
+/* line 117, ../sass/app.scss */
 #badge_modal_inner .close {
   position: absolute;
   top: 0;
@@ -7306,7 +7311,7 @@ html, body {
   padding: 1.25em;
 }
 
-/* line 120, ../sass/app.scss */
+/* line 123, ../sass/app.scss */
 .alert-box {
   position: fixed;
   top: 0;
@@ -7316,34 +7321,34 @@ html, body {
   display: none;
 }
 
-/* line 129, ../sass/app.scss */
+/* line 132, ../sass/app.scss */
 .top-bar,
 .top-bar-section li a:not(.button) {
   background: #182d39;
 }
 
-/* line 132, ../sass/app.scss */
+/* line 135, ../sass/app.scss */
 .top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
   border-left-color: #182d39;
   border-right-color: #2e4958;
 }
 
-/* line 140, ../sass/app.scss */
+/* line 143, ../sass/app.scss */
 span.title {
   font-size: 1.1em;
 }
 
-/* line 143, ../sass/app.scss */
+/* line 146, ../sass/app.scss */
 .square.grid {
   position: relative;
 }
 
-/* line 146, ../sass/app.scss */
+/* line 149, ../sass/app.scss */
 .square.grid > li {
   position: relative;
 }
 
-/* line 149, ../sass/app.scss */
+/* line 152, ../sass/app.scss */
 .square.grid > li > a {
   position: relative;
   display: block;
@@ -7354,7 +7359,7 @@ span.title {
   overflow: hidden;
 }
 
-/* line 158, ../sass/app.scss */
+/* line 161, ../sass/app.scss */
 .square.grid > li > a > span.detail {
   display: block;
   position: absolute;
@@ -7366,13 +7371,13 @@ span.title {
   background-repeat: repeat;
 }
 
-/* line 168, ../sass/app.scss */
+/* line 171, ../sass/app.scss */
 .square.grid > li > a {
   background-position: center center;
   background-repeat: no-repeat;
 }
 
-/* line 172, ../sass/app.scss */
+/* line 175, ../sass/app.scss */
 .collection-thumbs.square.grid .minithumbs {
   position: relative;
   display: block;
@@ -7381,7 +7386,7 @@ span.title {
   margin-top: 1.25em;
 }
 
-/* line 179, ../sass/app.scss */
+/* line 182, ../sass/app.scss */
 .collection-thumbs.square.grid .minithumb {
   position: absolute;
   width: 75px;
@@ -7396,30 +7401,30 @@ span.title {
   box-shadow: 0px 0px 14px rgba(50, 50, 50, 0.5);
 }
 
-/* line 192, ../sass/app.scss */
+/* line 195, ../sass/app.scss */
 .collection-thumbs.square.grid .minithumb-1 {
   top: 0px;
   left: 0px;
 }
 
-/* line 196, ../sass/app.scss */
+/* line 199, ../sass/app.scss */
 .collection-thumbs.square.grid .minithumb-2 {
   top: 25px;
   left: 50px;
 }
 
-/* line 200, ../sass/app.scss */
+/* line 203, ../sass/app.scss */
 .collection-thumbs.square.grid .minithumb-3 {
   top: 50px;
   left: 25px;
 }
 
-/* line 204, ../sass/app.scss */
+/* line 207, ../sass/app.scss */
 .square.grid > li > a > span.detail > span {
   display: block;
 }
 
-/* line 207, ../sass/app.scss */
+/* line 210, ../sass/app.scss */
 .square.grid .ui {
   display: none;
   position: absolute;
@@ -7429,7 +7434,7 @@ span.title {
   padding: 0 0.625em;
 }
 
-/* line 215, ../sass/app.scss */
+/* line 218, ../sass/app.scss */
 .grid .ui > ul {
   margin-left: 0px;
   display: inline-block;
@@ -7442,13 +7447,13 @@ span.title {
   margin-top: -1px;
 }
 
-/* line 226, ../sass/app.scss */
+/* line 229, ../sass/app.scss */
 .grid .ui > ul > li {
   margin-left: 0px;
   float: left;
 }
 
-/* line 230, ../sass/app.scss */
+/* line 233, ../sass/app.scss */
 .grid .ui > ul > li > a {
   display: block;
   width: 100%;
@@ -7456,46 +7461,46 @@ span.title {
   text-indent: -9000px;
 }
 
-/* line 236, ../sass/app.scss */
+/* line 239, ../sass/app.scss */
 .grid .ui > ul > li {
   width: 33%;
 }
 
-/* line 240, ../sass/app.scss */
+/* line 243, ../sass/app.scss */
 .badge-thumbs .badge_action.bdel,
 .collection-thumbs .collection_action.cdel {
   background-position: center -3px;
 }
 
-/* line 243, ../sass/app.scss */
+/* line 246, ../sass/app.scss */
 .badge-thumbs .badge_action.bcol {
   background-position: center -271px;
 }
 
-/* line 247, ../sass/app.scss */
+/* line 250, ../sass/app.scss */
 .badge-thumbs .badge_action.bdet,
 .collection-thumbs .collection_action.cdet {
   background-position: center -204px;
 }
 
-/* line 250, ../sass/app.scss */
+/* line 253, ../sass/app.scss */
 .collection-thumbs .collection_action.csha {
   background-position: center -137px;
 }
 
-/* line 253, ../sass/app.scss */
+/* line 256, ../sass/app.scss */
 .collections .badge-thumbs {
   margin-left: 0px;
 }
 
-/* line 256, ../sass/app.scss */
+/* line 259, ../sass/app.scss */
 .badge-thumbs.vertical > li {
   list-style-type: none;
   margin-bottom: 0.625em;
   position: relative;
 }
 
-/* line 261, ../sass/app.scss */
+/* line 264, ../sass/app.scss */
 .badge-thumbs.vertical > li > a {
   background-position: 12px center;
   background-repeat: no-repeat;
@@ -7504,17 +7509,17 @@ span.title {
   min-height: 90px;
 }
 
-/* line 268, ../sass/app.scss */
+/* line 271, ../sass/app.scss */
 .badge-thumbs.vertical > li > a > span {
   margin-left: 75px;
 }
 
-/* line 271, ../sass/app.scss */
+/* line 274, ../sass/app.scss */
 .badge-thumbs.vertical > li > a span {
   display: block;
 }
 
-/* line 275, ../sass/app.scss */
+/* line 278, ../sass/app.scss */
 .badge-thumbs.vertical .ui {
   width: inherit;
   position: absolute;
@@ -7526,39 +7531,39 @@ span.title {
   padding-right: 0.625em;
 }
 
-/* line 285, ../sass/app.scss */
+/* line 288, ../sass/app.scss */
 .badge-thumbs.vertical .ui > ul {
   border-radius: 5px;
   border: 1px solid #e5e5e5;
 }
 
-/* line 289, ../sass/app.scss */
+/* line 292, ../sass/app.scss */
 .badge-thumbs.vertical .detail {
   margin-top: 0.625em;
 }
 
-/* line 292, ../sass/app.scss */
+/* line 295, ../sass/app.scss */
 .badge-thumbs.vertical > li > a > .detail > .title {
   line-height: 2;
 }
 
-/* line 295, ../sass/app.scss */
+/* line 298, ../sass/app.scss */
 .fullbadge img {
   float: right;
 }
 
-/* line 298, ../sass/app.scss */
+/* line 301, ../sass/app.scss */
 .fullbadge p {
   line-height: 1.25em;
 }
 
-/* line 301, ../sass/app.scss */
+/* line 304, ../sass/app.scss */
 .collection_action {
   background-repeat: no-repeat;
   background-image: url("../img/sprite.png");
 }
 
-/* line 305, ../sass/app.scss */
+/* line 308, ../sass/app.scss */
 .collections .collection_action {
   height: 40px;
   display: block;
@@ -7567,29 +7572,29 @@ span.title {
   width: 30px;
 }
 
-/* line 312, ../sass/app.scss */
+/* line 315, ../sass/app.scss */
 .collections .collection_action.cdel {
   background-position: -1px 0px;
 }
 
-/* line 315, ../sass/app.scss */
+/* line 318, ../sass/app.scss */
 .collections .collection_action.csha {
   background-position: 0px -134px;
 }
 
-/* line 325, ../sass/app.scss */
+/* line 328, ../sass/app.scss */
 .issuer .badge-thumbs.vertical > li {
   margin-bottom: 0.625em;
   padding-bottom: 0px;
 }
 
-/* line 329, ../sass/app.scss */
+/* line 332, ../sass/app.scss */
 .issuer .badge-thumbs.vertical > li > a {
   float: left;
   width: 90%;
 }
 
-/* line 333, ../sass/app.scss */
+/* line 336, ../sass/app.scss */
 .issuer .badge-thumbs.vertical > li > span {
   float: right;
   display: block;
