@@ -7266,7 +7266,7 @@ span.title {
 }
 
 /* line 171, ../sass/app.scss */
-.square.grid > li > a {
+.square.grid > li > .badgethumb {
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -7395,7 +7395,7 @@ span.title {
 }
 
 /* line 264, ../sass/app.scss */
-.badge-thumbs.vertical > li > a {
+.badge-thumbs.vertical > li > .badgethumb {
   background-position: 12px center;
   background-repeat: no-repeat;
   background-color: #fff;
@@ -7404,16 +7404,17 @@ span.title {
 }
 
 /* line 271, ../sass/app.scss */
-.badge-thumbs.vertical > li > a > span {
+.badge-thumbs.vertical > li > .badgethumb > span {
   margin-left: 75px;
+  padding-top: 0.625em;
 }
 
-/* line 274, ../sass/app.scss */
-.badge-thumbs.vertical > li > a span {
+/* line 275, ../sass/app.scss */
+.badge-thumbs.vertical > li > .badgethumb span {
   display: block;
 }
 
-/* line 278, ../sass/app.scss */
+/* line 279, ../sass/app.scss */
 .badge-thumbs.vertical .ui {
   width: inherit;
   position: absolute;
@@ -7425,39 +7426,34 @@ span.title {
   padding-right: 0.625em;
 }
 
-/* line 288, ../sass/app.scss */
+/* line 289, ../sass/app.scss */
 .badge-thumbs.vertical .ui > ul {
   border-radius: 5px;
   border: 1px solid #e5e5e5;
 }
 
-/* line 292, ../sass/app.scss */
-.badge-thumbs.vertical .detail {
-  margin-top: 0.625em;
-}
-
-/* line 295, ../sass/app.scss */
-.badge-thumbs.vertical > li > a > .detail > .title {
+/* line 293, ../sass/app.scss */
+.badge-thumbs.vertical > li > .badgethumb > .detail > .title {
   line-height: 2;
 }
 
-/* line 298, ../sass/app.scss */
+/* line 296, ../sass/app.scss */
 .fullbadge img {
   float: right;
 }
 
-/* line 301, ../sass/app.scss */
+/* line 299, ../sass/app.scss */
 .fullbadge p {
   line-height: 1.25em;
 }
 
-/* line 304, ../sass/app.scss */
+/* line 302, ../sass/app.scss */
 .collection_action {
   background-repeat: no-repeat;
   background-image: url("../img/sprite.png");
 }
 
-/* line 308, ../sass/app.scss */
+/* line 306, ../sass/app.scss */
 .collections .collection_action {
   height: 40px;
   display: block;
@@ -7466,30 +7462,30 @@ span.title {
   width: 30px;
 }
 
-/* line 315, ../sass/app.scss */
+/* line 313, ../sass/app.scss */
 .collections .collection_action.cdel {
   background-position: -1px 0px;
 }
 
-/* line 318, ../sass/app.scss */
+/* line 316, ../sass/app.scss */
 .collections .collection_action.csha {
   background-position: 0px -134px;
 }
 
-/* line 328, ../sass/app.scss */
+/* line 326, ../sass/app.scss */
 .issuer .badge-thumbs.vertical > li {
   margin-bottom: 0.625em;
   padding-bottom: 0px;
 }
 
-/* line 332, ../sass/app.scss */
-.issuer .badge-thumbs.vertical > li > a {
+/* line 330, ../sass/app.scss */
+.issuer.confirm .badge-thumbs.vertical > li > .badgethumb {
   float: left;
   width: 90%;
 }
 
-/* line 336, ../sass/app.scss */
-.issuer .badge-thumbs.vertical > li > span {
+/* line 334, ../sass/app.scss */
+.issuer.confirm .badge-thumbs.vertical > li > span {
   float: right;
   display: block;
   width: 10%;

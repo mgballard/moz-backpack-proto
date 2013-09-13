@@ -168,7 +168,7 @@ span.title {
 	background-image:url('../img/gd/90pw.png');
 	background-repeat:repeat;
 }
-.square.grid > li > a {
+.square.grid > li > .badgethumb {
 	background-position:center center;
 	background-repeat:no-repeat;
 }
@@ -261,17 +261,18 @@ span.title {
 	margin-bottom:0.625em;
 	position:relative;
 }
-.badge-thumbs.vertical > li > a {
+.badge-thumbs.vertical > li > .badgethumb {
 	background-position:12px center;
 	background-repeat:no-repeat;
 	background-color:#fff;
 	display:block;
 	min-height:90px;
 }
-.badge-thumbs.vertical > li > a > span {
+.badge-thumbs.vertical > li > .badgethumb > span {
 	margin-left:75px;
+	padding-top:0.625em;
 }
-.badge-thumbs.vertical > li > a span {
+.badge-thumbs.vertical > li > .badgethumb span {
 	display:block;
 }
 
@@ -289,10 +290,7 @@ span.title {
 	border-radius:5px;
 	border:1px solid #e5e5e5;
 }
-.badge-thumbs.vertical .detail {
-	margin-top:0.625em;
-}
-.badge-thumbs.vertical > li > a > .detail > .title {
+.badge-thumbs.vertical > li > .badgethumb > .detail > .title {
 	line-height:2;
 }
 .fullbadge img {
@@ -329,11 +327,11 @@ span.title {
 	margin-bottom:0.625em;
 	padding-bottom:0px;
 }
-.issuer .badge-thumbs.vertical > li > a {
+.issuer.confirm .badge-thumbs.vertical > li > .badgethumb {
 	float:left;
 	width:90%;
 }
-.issuer .badge-thumbs.vertical > li > span {
+.issuer.confirm .badge-thumbs.vertical > li > span {
 	float:right;
 	display:block;
 	width:10%;
