@@ -9,6 +9,37 @@
   	<title>Mozilla BackPack</title>
   	<link rel="stylesheet" href="../stylesheets/app.css">
   	<script src="../javascripts/vendor/custom.modernizr.js"></script>
+  	<style>
+  	#boxes {
+  		-webkit-column-count: 2;
+  		-webkit-column-gap: 1.25em;
+  		-webkit-column-fill: auto;
+  		-moz-column-count: 2;
+  		-moz-column-gap: 1.25em;
+  		-moz-column-fill: auto;
+  		column-count: 2;
+  		column-gap: 1.25em;
+  		column-fill: auto;
+  	}
+  	#boxes li {
+  		background-color:#fff;
+  		margin-bottom:1.25em;
+  		min-height:150px;
+  		display: inline-block;
+  		border-radius:4px;
+  		padding:0.625em;
+  		width:100%;
+  	}
+	#boxes .badgethumb {
+  		background-position:top center;
+  		background-repeat:no-repeat;
+  		display:block;
+  		min-height:100px;
+  		margin-height:0.625em;
+  		padding:100px 0.625em 0 0.625em;
+
+	}
+  	</style>
 </head>
 <body class="logged-out public">
 	<div class="row">
@@ -18,103 +49,108 @@
 	</div>
 	<div class="row">
 		<div class="large-12 columns">
-			<ul class="small-block-grid-2 large-block-grid-2 badge-thumbs square grid">
+			<ul id="boxes" class="">			
 			  <li>
 			  	<p class="badgethumb badgehash-a" href="#" style="background-image:url('../img/badge/badgehash-a-m.png');">
 					<span class="detail">
 			  			<span class="title">Badge A</span>
-			  			<span class="content">Issued by <em>Organization A</em> three days ago will expire in two months, seven days.<br>Exists in three collections.</span>
+			  			<span class="content">Issued by <em>Organization A</em> three days ago.</span>
+			  			<br><br>
+			  			User description user description user description user description user description user description user description user description user description user description user description user description user description user description user description user description user description user description user description.
 			  		</span>
 			  	</p>
 			  </li>
 			 <li>
-			 	<a class="badgethumb badgehash-b" href="#" style="background-image:url('../img/badge/badgehash-b-m.png');">
+			 	<p class="badgethumb badgehash-b" href="#" style="background-image:url('../img/badge/badgehash-b-m.png');">
 					<span class="detail">
 			  			<span class="title">Badge B</span>
-			  			<span class="content">Issued by <em>Organization A</em> three days ago will expire in two months, seven days.<br>Exists in three collections.</span>
+			  			<span class="content">Issued by <em>Organization A</em> three days ago.</span>
 			  		</span>
 			 	</a>
 			 </li>
 			 <li>
-			 	<a class="badgethumb badgehash-c" href="#" style="background-image:url('../img/badge/badgehash-c-m.png');">
+			 	<p class="badgethumb badgehash-c" href="#" style="background-image:url('../img/badge/badgehash-c-m.png');">
 					<span class="detail">
 			  			<span class="title">Badge C</span>
-			  			<span class="content">Issued by <em>Organization A</em> three days ago will expire in two months, seven days.<br>Exists in three collections.</span>
+			  			<span class="content">Issued by <em>Organization A</em> three days ago.</span>
 			  		</span>
 			 	</a>
 			 </li>
 			 <li>
-			 	<a class="badgethumb badgehash-d" href="#" style="background-image:url('../img/badge/badgehash-d-m.png');">
+			 	<p class="badgethumb badgehash-d" href="#" style="background-image:url('../img/badge/badgehash-d-m.png');">
 					<span class="detail">
 			  			<span class="title">Badge D</span>
-			  			<span class="content">Issued by <em>Organization A</em> three days ago will expire in two months, seven days.<br>Exists in three collections.</span>
+			  			<span class="content">Issued by <em>Organization A</em> three days ago.</span>
 			  		</span>
 			 	</a>
 			 </li>
 			  <li>
-			  	<a class="badgethumb badgehash-e" href="#" style="background-image:url('../img/badge/badgehash-e-m.png');">
+			  	<p class="badgethumb badgehash-e" href="#" style="background-image:url('../img/badge/badgehash-e-m.png');">
 					<span class="detail">
 			  			<span class="title">Badge E</span>
-			  			<span class="content">Issued by <em>Organization A</em> three days ago will expire in two months, seven days.<br>Exists in three collections.</span>
+			  			<span class="content">Issued by <em>Organization A</em> three days ago.</span>
 			  		</span>
 			  	</a>
 			  </li>
 			 <li>
-			 	<a class="badgethumb badgehash-f" href="#" style="background-image:url('../img/badge/badgehash-f-m.png');">
+			 	<p class="badgethumb badgehash-f" href="#" style="background-image:url('../img/badge/badgehash-f-m.png');">
 					<span class="detail">
 			  			<span class="title">Badge F</span>
-			  			<span class="content">Issued by <em>Organization A</em> three days ago will expire in two months, seven days.<br>Exists in three collections.</span>
+			  			<span class="content">Issued by <em>Organization A</em> three days ago.</span>
 			  		</span>
 			 	</a>
 			 </li>
 			 <li>
-			 	<a class="badgethumb badgehash-g" href="#" style="background-image:url('../img/badge/badgehash-g-m.png');">
+			 	<p class="badgethumb badgehash-g" href="#" style="background-image:url('../img/badge/badgehash-g-m.png');">
 					<span class="detail">
 			  			<span class="title">Badge G</span>
-			  			<span class="content">Issued by <em>Organization A</em> three days ago will expire in two months, seven days.<br>Exists in three collections.</span>
+			  			<span class="content">Issued by <em>Organization A</em> three days ago.</span>
 			  		</span>
 			 	</a>
 			 </li>
 			 <li>
-			 	<a class="badgethumb badgehash-h" href="#" style="background-image:url('../img/badge/badgehash-h-m.png');">
+			 	<p class="badgethumb badgehash-h" href="#" style="background-image:url('../img/badge/badgehash-h-m.png');">
 					<span class="detail">
 			  			<span class="title">Badge H</span>
-			  			<span class="content">Issued by <em>Organization A</em> three days ago will expire in two months, seven days.<br>Exists in three collections.</span>
+			  			<span class="content">Issued by <em>Organization A</em> three days ago.</span>
+			  			<br><br>
+			  			User description user description user description user description user description user description user description user description user description user description.
 			  		</span>
 			 	</a>
 			 </li>
 			  <li>
-			  	<a class="badgethumb badgehash-i" href="#" style="background-image:url('../img/badge/badgehash-i-m.png');">
+			  	<p class="badgethumb badgehash-i" href="#" style="background-image:url('../img/badge/badgehash-i-m.png');">
 			 		<span class="detail">
 			   			<span class="title">Badge I</span>
-			   			<span class="content">Issued by <em>Organization A</em> three days ago will expire in two months, seven days.<br>Exists in three collections.</span>
+			   			<span class="content">Issued by <em>Organization A</em> three days ago.</span>
 			   		</span>
 			  	</a>
 			  </li>
 			   <li>
-			   	<a class="badgethumb badgehash-j" href="#" style="background-image:url('../img/badge/badgehash-j-m.png');">
+			   	<p class="badgethumb badgehash-j" href="#" style="background-image:url('../img/badge/badgehash-j-m.png');">
 			  		<span class="detail">
 			    			<span class="title">Badge J</span>
-			    			<span class="content">Issued by <em>Organization A</em> three days ago will expire in two months, seven days.<br>Exists in three collections.</span>
+			    			<span class="content">Issued by <em>Organization A</em> three days ago.</span>
 			    		</span>
 			   	</a>
 			   </li>				  
 			    <li>
-			    	<a class="badgethumb badgehash-k" href="#" style="background-image:url('../img/badge/badgehash-k-m.png');">
+			    	<p class="badgethumb badgehash-k" href="#" style="background-image:url('../img/badge/badgehash-k-m.png');">
 			   		<span class="detail">
 			     			<span class="title">Badge K</span>
-			     			<span class="content">Issued by <em>Organization A</em> three days ago will expire in two months, seven days.<br>Exists in three collections.</span>
+			     			<span class="content">Issued by <em>Organization A</em> three days ago.</span>
 			     		</span>
 			    	</a>
 			    </li>
 			     <li>
-			     	<a class="badgethumb badgehash-l" href="#" style="background-image:url('../img/badge/badgehash-l-m.png');">
+			     	<p class="badgethumb badgehash-l" href="#" style="background-image:url('../img/badge/badgehash-l-m.png');">
 			    		<span class="detail">
 			      			<span class="title">Badge L</span>
-			      			<span class="content">Issued by <em>Organization A</em> three days ago will expire in two months, seven days.<br>Exists in three collections.</span>
+			      			<span class="content">Issued by <em>Organization A</em> three days ago.</span>
 			      		</span>
 			     	</a>
 			     </li>
+
 			</ul>
 		</div>
 	</div>
