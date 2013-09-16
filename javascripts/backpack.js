@@ -12,7 +12,9 @@ $(document).ready(function() {
   }
 
   //the click function for lists of badge thumbnails
-  $( '.grid' ).delegate( "a", "click", function() {
+  $( 'body' ).delegate( "a", "click", function() {
+    console.log(123);
+
     if($('.logged-out').length != 0) {
       makeAlert('Please <a class="button small" href="persona.html">log in</a> to make changes to your badges.','alert');
       return false;
@@ -22,7 +24,6 @@ $(document).ready(function() {
     var ui = 0;
     if (target.hasClass('badgethumb')) { ui = 'badge'; } 
     else if (target.hasClass('collectionthumb')) { ui = 'collection'; }
-
     //Display badge content and BadgeUI for clicked badge
     if (ui != 0) {
       //for square thumbnal badges
@@ -99,8 +100,8 @@ $(document).ready(function() {
       } else {
       output += '' +
         '   <li><a class="collection_action cdel ' + hash + '" href="#">Delete</a></li>' +
-        '   <li><a class="collection_action csha ' + hash + '" href="#">Share</a></li>' +
-        '   <li><a class="collection_action cdet ' + hash + '" href="#">Detail</a></li>';    
+        '   <li><a class="collection_action csha ' + hash + '" target=_blank href="' + docroot + '/userhash/collectionhash-x.html">Share</a></li>' +
+        '   <li><a class="collection_action cedi ' + hash + '" href="#">Edit</a></li>';    
       }
 
   output += '' +
@@ -121,14 +122,18 @@ $(document).ready(function() {
   console.log('target is : ' + hash);
 
   if (action == 'bdel') {
+    if((element.parents('.collection').length) > 0) {
+
+      var parent = element.parents('.collection')[0];
+      makeAlert('Are you sure you want to delete ' + $('.' + hash + ' .title').html() + ' from ' + $(parent).find('.title').html() + '?','alert');
+    
+    } else {
     makeAlert('Are you sure you want to delete ' + $('.' + hash + ' .title').html() + '?','alert');
+  }
     } else if (action == 'bdet') {
       makeModal(element);
     } else if (action == 'bcol') {
       console.log(element);
-    } else if (action == 'brfc') {
-      var collection = element.attr('class').split(' ')[3];
-      makeAlert('Are you sure you want to delete ' + $('.' + hash + ' .title').html() + ' from ' + $('.' + collection + ' .title').html() + '?','alert');
     } else if (action == 'batc') {
       var collection = element.attr('class').split(' ')[3];
       makeAlert('Are you sure you want to add ' + $('.' + hash + ' .title').html() + ' to ' + $('.' + collection + ' .title').html() + '?','warning');
@@ -149,7 +154,7 @@ $(document).ready(function() {
   if (action == 'cdel') {
     console.log(hash);
     makeAlert('Are you sure you want to delete ' + $('.' + hash + ' .title').html() + '?','alert');
-    } else if (action == 'cdet') {
+    } else if (action == 'cedi') {
       makeModal(element);
     } else {
       console.log('no idea...')
@@ -171,10 +176,18 @@ $(document).ready(function() {
     elemPosition = element.parent().offset().left;
     bodyWidth = $('body').offset().width;
 
-   // console.log('element position is : ' + elemPosition);
-   // console.log('body width is : ' + bodyWidth);
+    console.log('element position is : ' + elemPosition);
+    console.log('body width is : ' + bodyWidth);
 
-    var parentUL = element.parents('.grid');
+
+    var parentUL;
+
+    if(element.parents('.grid').length) {
+      parentUL = element.parents('.grid');
+    } else {
+      parentUL = $('.grid').first();
+    }
+
     var firstli = parentUL.find('li:first-child').find('a').offset();
     var xpos = firstli.left;
     var ypos = firstli.top;
@@ -184,11 +197,12 @@ $(document).ready(function() {
     var height = firstli_h;
     var width = firstli_w;
 
-    if(numRows == 4) {
+    if(numRows != 3) {
       width = ((firstli_w * 2) + 20);
       height = ((firstli_h * 2) + 20);
       //display on the right if element is on the left
-      if(elemPosition < (bodyWidth / 2)) xpos = (xpos + width + 20);
+    if(numRows == 1) { height*=2; width=firstli_w; }
+    if(elemPosition < (bodyWidth / 2) && (numRows == 4)) xpos = (xpos + width + 20);
     } else if(numRows == 3){
       width = ((firstli_w * 1.5) + 20);
       height = ((firstli_h * 4) + 30);
@@ -197,10 +211,16 @@ $(document).ready(function() {
     } else {
       console.log("no idea how to display modal");
     }
-  
+
+
+   if (element.is('.collection_action')) {
+    var details = retrieveCollection(element.attr('class').split(' ')[2]);
+   }
+  else if (element.is('.badge_action')) {
     var details = retrieveBadge(element.attr('class').split(' ')[2]);
+  }
     var close = $('<a href="#" class="close">×</a>').click(function(){$('#badge_modal').remove();return false});
-    var inner = $('<div style="top:' + ypos + 'px;left:' + xpos + 'px;width:' + width + 'px;height:' + height + 'px;" id="badge_modal_inner"></div>');
+    var inner = $('<div style="top:' + ypos + 'px;left:' + xpos + 'px;width:' + width + 'px;min-height:' + height + 'px;" id="badge_modal_inner"></div>');
     var outer = $('<div id="badge_modal"></div>');
 
     outer.append(inner.append(details,close));
@@ -256,6 +276,46 @@ function retrieveBadge(hash) {
   return output;
 }
 
+function retrieveCollection(hash) {
+  //here is a dummy object
+  hash = 'collectionhash-x';
+  collection=new Object();
+  collection.hash=hash;
+  collection.name="Collection X";
+  collection.desc="<p>Here is the user's description of the collection.";
+  collection.badges = {"badgehash-a": [
+    {"name": "Badge A", "iss": "1346760732", "exp": "1389484800", "org": "Organization X"},
+    ],
+    "badgehash-b": [
+    {"name": "Badge B", "iss": "1346760732", "exp": "1389484800", "org": "Organization X"},
+    ],
+    "badgehash-c": [
+    {"name": "Badge C", "iss": "1346760732", "exp": "1389484800", "org": "Organization X"},
+    ],
+    "badgehash-d": [
+    {"name": "Badge D", "iss": "1346760732", "exp": "1389484800", "org": "Organization X"},
+    ],
+    "badgehash-e": [
+    {"name": "Badge E", "iss": "1346760732", "exp": "1389484800", "org": "Organization X"},
+    ]
+};
+var output='<ul class="badge-thumbs vertical collection ' + hash + ' grid"><li class=title> ' + collection.name + ' </li><li></h4>' + collection.desc + '</h4></li>';
+$.each(collection.badges, function(index, value) {
+//<li><a class="' + index + '" href="#">' + value[0].name + ' expires ' + $.timeago(dateFromUnix(value[0].expiry)) + '</li>';
+    output+='<li>'+
+              '<a class="badgethumb badgehash-f" href="#" style="background-image:url(' + docroot + '/img/badge/' + index + '-s.png);">'+
+                '<span class="detail">'+
+                  '<span class="title">' + value[0].name + '</span>'+
+                  '<span class="content">Issued ' + $.timeago(dateFromUnix(value[0].iss)) + ' by <em>' + value[0].org + '</em>.<br>Expires <em>' + $.timeago(dateFromUnix(value[0].exp)) + '</em></span>' +
+                '</span>'+
+              '</a>'+
+            '</li>';
+
+}); 
+output+="</ul>";
+return output;
+}
+
 function dateFromUnix(timestamp) {
   var date = new Date(timestamp * 1000);
   return date;
@@ -302,6 +362,6 @@ function getHashParams() {
 
     while (e = r.exec(q))
        hashParams[d(e[1])] = d(e[2]);
-
+     console.log(hashParams);
     return hashParams;
 }

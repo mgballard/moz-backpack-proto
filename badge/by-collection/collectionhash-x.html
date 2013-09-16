@@ -10,7 +10,7 @@
   	<link rel="stylesheet" href="../../stylesheets/app.css">
   	<script src="../../javascripts/vendor/custom.modernizr.js"></script>
 </head>
-<body>
+<body id="by-collection" class="collection">
 	<div class="row">
 		<div class="large-12 columns">
 			<h2>Mozilla Backpack</h2>
@@ -49,8 +49,13 @@
 	</div>
 	<div class="row">
 			<form id="badgefilter" class="custom">
-				<div class="large-12 columns">
-				<h2>Badges in Collection X</h2>
+				<div class="large-12 columns js">
+				<h2>Badges in <span class="title">Collection X</span>
+						<a class="collection_action cedi collectionhash-c" href="#">Edit</a>	
+						<a href="../../userhash/collectionhash-x.html" target="_blank" class="collection_action csha collectionhash-b" href="#">Share</a>
+						<a class="collection_action cdel collectionhash-b" href="#">Delete</a>
+				</h2>
+
 				<ul class="small-block-grid-2 large-block-grid-4">
 					<li>
 						<select id="collectionFilter" class="medium">

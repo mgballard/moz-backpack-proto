@@ -235,25 +235,28 @@ span.title {
 .grid .ui > ul > li > a {
 	display:block;
 	width:100%;
-	height:40px;
+	height:50px;
 	text-indent:-9000px;
 }
 .grid .ui > ul > li {
 	width:33%;
 }
-.badge-thumbs .badge_action.bdel,
-.collection-thumbs .collection_action.cdel {
-	background-position:center -3px;
+.badge_action.bdel,
+.collection_action.cdel, {
+	background-position:center 0px;
 }
-.badge-thumbs .badge_action.bcol {
-	background-position:center -271px;
+.badge_action.bcol {
+	background-position:center -267px;
 }
-.badge-thumbs .badge_action.bdet,
-.collection-thumbs .collection_action.cdet {
-	background-position:center -204px;
+.badge_action.bdet,
+.collection_action.cdet {
+	background-position:center -200px;
 }
-.collection-thumbs .collection_action.csha {
+.collection_action.csha {
 	background-position:center -137px;
+}
+.collection_action.cedi {
+	background-position:center -69px;
 }
 .collections .badge-thumbs {
 	margin-left:0px;
@@ -290,7 +293,7 @@ span.title {
 	padding-right:0.625em;
 }
 .badge-thumbs.vertical .ui > ul {
-	border-radius:5px;
+	border-radius:2px;
 	border:1px solid #e5e5e5;
 }
 .badge-thumbs.vertical > li > .badgethumb > .detail > .title {
@@ -306,18 +309,16 @@ span.title {
 	background-repeat:no-repeat;
 	background-image:url("../img/sprite.png");	
 }
-.collections .collection_action {
+.collection_action {
 	height:40px;
 	display:block;
 	float:left;
 	text-indent:-9000px;
 	width:30px;
 }
-.collections .collection_action.cdel {
-	background-position:-1px 0px;
-}
-.collections .collection_action.csha {
-	background-position:0px -134px;
+h2 .collection_action {
+	float:right;
+	margin-top:8px;
 }
 // public share page ///
 .logged-out.public .square.grid > li > p.badgethumb {

@@ -1,7 +1,7 @@
 mozilla-backpack-v2
 ===================
 
-Mozilla OpenBadges BackPack v2 Prototype
+Mozilla OpenBadges BackPack v1.1 Prototype
 
 For live edits to SASS:
 
