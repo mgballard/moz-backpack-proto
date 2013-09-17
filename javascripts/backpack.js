@@ -13,7 +13,6 @@ $(document).ready(function() {
 
   //the click function for lists of badge thumbnails
   $( 'body' ).delegate( "a", "click", function() {
-    console.log(123);
 
     if($('.logged-out').length != 0) {
       makeAlert('Please <a class="button small" href="persona.html">log in</a> to make changes to your badges.','alert');
@@ -65,6 +64,7 @@ $(document).ready(function() {
     if(!target.hasClass('bcol')) return false;
   } else if (target.hasClass('collection_action')) {
     collectionAction(target);
+    return false;
   } else if (target.hasClass('toggle')) {
     //console.log(hashOrAction);
     $('#'+hashOrAction).fadeToggle();
@@ -172,7 +172,6 @@ $(document).ready(function() {
   //a function to get badge details and display them in a modal
   //display modal to the left,right,or over the list itself depending on circumstances
   function makeModal(element) {
-
     elemPosition = element.parent().offset().left;
     bodyWidth = $('body').offset().width;
 
