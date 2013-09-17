@@ -64,7 +64,7 @@ $(document).ready(function() {
     if(!target.hasClass('bcol')) return false;
   } else if (target.hasClass('collection_action')) {
     collectionAction(target);
-    return false;
+    if(!target.hasClass('csha')) return false;
   } else if (target.hasClass('toggle')) {
     //console.log(hashOrAction);
     $('#'+hashOrAction).fadeToggle();
