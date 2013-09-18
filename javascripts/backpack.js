@@ -25,6 +25,23 @@ $(document).ready(function() {
     else if (target.hasClass('collectionthumb')) { ui = 'collection'; }
     //Display badge content and BadgeUI for clicked badge
     if (ui != 0) {
+
+      if($('.chosen').length > 0 ) {
+        $('.chosen').each(function(){
+          if(!$(this).hasClass(hashOrAction)) {
+            var thisTarget = $(this);
+            $(this).find('.detail').animate({
+              top: "160px"
+            }, 400, "swing", function(){
+              thisTarget.removeClass('chosen').parents('li').find('.ui').fadeOut('fast', function() {
+                $(this).remove();
+              });
+            });
+          }
+        });
+      }
+
+
       //for square thumbnal badges
       if(target.parents('ul').hasClass('square')){
         if (target.hasClass('chosen')) {
