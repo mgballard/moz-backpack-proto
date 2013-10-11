@@ -14,10 +14,6 @@ $(document).ready(function() {
   //the click function for lists of badge thumbnails
   $( 'body' ).delegate( "a", "click", function() {
 
-    if($('.logged-out').length != 0) {
-      makeAlert('Please <a class="button small" href="persona.html">log in</a> to make changes to your badges.','alert');
-      return false;
-    }
     var target = $( this );
     var hashOrAction = $( this ).attr('class').split(' ')[1];
     var ui = 0;
